@@ -1,0 +1,243 @@
+/* estilo_gotico.css */
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Playfair+Display&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  /* resto de estilos... */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UnifrakturCook', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'UnifrakturCook', cursive, serif;
+  background: linear-gradient(135deg, #1a0b0b 0%, #3e1f1f 100%);
+  color: #d9c6b8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Portada con imagen de fondo oscura y overlay */
+.portada {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 950px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border: 3px solid #6e4b37;
+  border-radius: 20px;
+  box-shadow: 0 0 30px 5px #4a3429;
+}
+
+.portada-fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%);
+}
+
+.contador-overlay {
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #f0e6d2;
+  text-shadow: 0 0 5px #a37954;
+}
+
+.contador-overlay h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.contador-overlay p {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* Contenido principal */
+.contenido {
+  width: 100%;
+  max-width: 900px;
+  background-color: rgba(26, 11, 11, 0.75);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 40px #422f26;
+  overflow-y: auto;
+  max-height: 600px;
+  scrollbar-width: thin;
+  scrollbar-color: #8b6c4a transparent;
+}
+
+.Mis18años {
+  max-width: 800px;               /* ancho máximo para que no se vea estirada */
+  margin: 50px auto;              /* centra horizontalmente */
+  text-align: center;             /* centra el contenido (texto) */
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.4); /* fondo oscuro semitransparente */
+  border: 2px solid #6e4b37;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #4a3429;
+  color: #e8d8c3;                 /* color claro para contraste */
+}
+
+.nombre-melanie {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #f1e0c5;
+  text-shadow: 2px 2px 6px #4a3429;
+  margin: 20px 0;
+}
+
+
+/* Scrollbar para webkit */
+.contenido::-webkit-scrollbar {
+  width: 10px;
+}
+
+.contenido::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contenido::-webkit-scrollbar-thumb {
+  background-color: #8b6c4a;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
+
+/* Secciones */
+.evento, .galeria, .regalos {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c9b99a;
+  border-bottom: 3px solid #6e4b37;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+/* Texto */
+p, ul {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #d9c6b8;
+}
+
+ul li {
+  margin-bottom: 8px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: #a67c3a;
+  font-weight: bold;
+}
+
+/* Iframes de mapas */
+iframe {
+  width: 100%;
+  height: 250px;
+  border: 3px solid #6e4b37;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #422f26;
+  margin-top: 10px;
+}
+
+/* Galería de imágenes */
+.galeria .imagenes {
+  display: flex;
+  gap: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.galeria .imagenes img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px; /* límite máximo de altura para que no sean muy altas */
+  border: 3px solid #6e4b37;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #4a3429;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  object-fit: cover;
+  flex: 1 1 200px; /* para que crezcan y se encojan en flexbox */
+  min-width: 150px; /* mínimo ancho para que no se hagan muy pequeñas */
+}
+
+
+.galeria .imagenes {
+  display: flex;
+  gap: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lightbox oculto por defecto */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #6e4b37;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #000;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .portada {
+    height: 300px;
+  }
+  .contador-overlay h1 {
+    font-size: 2.2rem;
+  }
+  .contador-overlay p {
+    font-size: 1.8rem;
+  }
+  .galeria .imagenes img {
+    width: 120px;
+    height: 290px;
+  }
+}
+

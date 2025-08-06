@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación</title>
+  <link rel="stylesheet" href="estilo_gotico.css">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'UnifrakturCook', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Portada con cuenta regresiva -->
+  <header class="portada">
+    <img src="PORTADA.png" alt="Portada de Melanie" class="portada-fondo">
+    <div class="contador-overlay">
+      <h2>Faltan</h2>
+      <p id="contador"></p>
+      <h2>8 de Noviembre del 2025</h2>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+     <section class="Mis18años">
+        <h2>Mis 18 Años</h2>
+       <p class="nombre-melanie">Melanie Valeria Trejo Zapata</p>
+        <h2>En una noche marcada por la elegancia de las sombras, y tu presencia sellará este rito de paso eterno.</h2>
+        <h3>Invitación Valida para 4 Personas</h3>
+     </section>
+    <section class="evento">
+      <h2>Ceremonia</h2>
+      <p><strong>Lugar:</strong> Parroquia de San Francisco de Asís </p>
+      <p>Recepción: 18:00 hrs</p>
+      <p><strong>Dirección:</strong> S. Juan de Aragón Manzana 020, Gral Vicente Villada, 57710 Cdad. Nezahualcóyotl, Méx.</p>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470.4518399889045!2d-99.0105841!3d19.3858283!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e2d36e7ee7ab%3A0x603e1c07d78a92b!2sParroquia%20de%20San%20Francisco%20de%20As%C3%ADs!5e0!3m2!1ses-419!2smx!4v1754421320090!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="evento">
+      <h2>Recepción</h2>
+      <p><strong>Lugar:</strong> Salón de Eventos American Fantasy</p>
+      <p>Recepción: 20:00 hrs</p>
+      <p><strong>Dirección:</strong> Av. Vicente Villada y glorieta de Petróleos, Col. Vicente Villada, Cd. Nezahualcóyotl</p>
+      <iframe src="https://www.google.com/maps?q=Av.+Vicente+Villada+y+glorieta+de+Petróleos,+Cd.+Nezahualcóyotl&output=embed" loading="lazy"></iframe>
+    </section>
+
+   <section class="galeria">
+  <h2>Galería</h2>
+  <div class="imagenes">
+    <img src="fotos_extraidas/foto_1.jpg" alt="Foto 1" onclick="abrirLightbox(this)">
+    <img src="fotos_extraidas/foto_2.jpg" alt="Foto 2" onclick="abrirLightbox(this)">
+    <img src="fotos_extraidas/foto_3.jpg" alt="Foto 3" onclick="abrirLightbox(this)">
+    
+  </div>
+</section>
+
+<!-- Contenedor del Lightbox -->
+<div id="lightbox" class="lightbox" onclick="cerrarLightbox()">
+  <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+ <section class="regalos">
+  
+  <h2>Regalos</h2>
+  <p>Para mí, tu presencia es el mejor regalo que puedo recibir.</p>
+  <p>O tambien podrias: </p>
+  <ul>
+     <li>💌 Lluvia de sobres</li>
+  </ul>
+  <h1>Confirmar al numero/whatsapp </h1>
+  <p>SERGIO EDUARDO +52 55 17031696</p>
+</section>
+
+
+  </main>
+
+  <!-- JavaScript cuenta regresiva -->
+  <script>
+    const destino = new Date("2025-11-08T18:00:00").getTime();
+    const contador = document.getElementById("contador");
+    setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = destino - ahora;
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+      contador.innerHTML = `${dias} días ${horas}h ${minutos}m ${segundos}s`;
+    }, 1000);
+  </script>
+<script>
+  function abrirLightbox(img) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  }
+
+  function cerrarLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+  }
+</script>
+
+
+</body>
+</html>
