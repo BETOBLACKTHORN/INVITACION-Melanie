@@ -29,13 +29,13 @@
   </header>
 
 <!-- Música de fondo con botón y control de volumen -->
-<audio id="Yoshi's Island OST - Flower Garden" loop>
-  <source src="flowergarden" type="audio/mpeg">
+<audio id="DarkVampire" loop>
+  <source src="DarkVampire.mp3" type="audio/mp3">
   Tu navegador no soporta audio HTML5.
 </audio>
 
 <div class="musica-controles">
-  <button id="btn-play">🎵 Reproducir Música</button>
+  <button id="btn-play">🎵 Dale Play!</button>
   <input type="range" id="volumen" min="0" max="1" step="0.01" value="0.5">
 </div>
 
@@ -123,7 +123,7 @@
 </script>
 
 <script>
-  const audio = document.getElementById('musica-fondo');
+  const audio = document.getElementById('DarkVampire');
   const playBtn = document.getElementById('btn-play');
   const volumen = document.getElementById('volumen');
 
